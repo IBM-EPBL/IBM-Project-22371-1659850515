@@ -1,0 +1,97 @@
+void setup()
+{
+  pinMode(13,OUTPUT);
+  pinMode(12,OUTPUT);
+  pinMode(8,INPUT);
+  pinMode(0,OUTPUT);
+  pinMode(1,OUTPUT);
+  pinMode(2,OUTPUT);
+  pinMode(3,OUTPUT);
+  pinMode(4,OUTPUT);
+  pinMode(5,OUTPUT);
+  pinMode(6,OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(13,LOW);
+  digitalWrite(12,LOW);
+  int a =digitalRead(8);
+  static int b=0;
+  if(a==1)
+  {
+  digitalWrite(13,HIGH);
+  digitalWrite(12,HIGH);
+  ++b;
+  }
+  switch(b){
+  case(0):
+    digit(0,0,0,0,0,0,1);
+    delay(1000);
+    break;
+    
+  case(1):
+    digit(1,0,0,1,1,1,1);
+    delay(1000);
+    break;
+    
+  case(2):
+    digit(0,0,1,0,0,1,0);
+    delay(1000);
+    break;
+    
+  case(3):
+    digit(0,0,0,0,1,1,0);
+    delay(1000);
+    break;
+    
+  case(4):
+    digit(1,0,0,1,1,0,0);
+    delay(1000);
+    break;
+    
+  case(5):
+    digit(0,1,0,0,1,0,0);
+    delay(1000);
+    break;
+    
+  case(6):
+    digit(0,1,0,0,0,0,0);
+    delay(1000);
+    break;
+    
+  case(7):  
+    digit(0,0,0,1,1,1,1);
+    delay(1000);
+    break;
+    
+  case(8):  
+    digit(0,0,0,0,0,0,0);
+    delay(1000);
+    break;
+    
+  case(9):  
+    digit(0,0,0,0,1,0,0);
+    delay(1000);
+    break;
+    
+  default:
+    digit(0,1,1,0,0,0,0);
+    delay(1000);
+    break;
+    
+  }
+   
+ 
+}
+
+void digit(int a0,int a1,int a2, int a3, int a4, int a5, int a6)
+{
+  digitalWrite(0,a0);
+  digitalWrite(1,a1);
+  digitalWrite(2,a2);
+  digitalWrite(3,a3);
+  digitalWrite(4,a4);
+  digitalWrite(5,a5);
+  digitalWrite(6,a6);
+}
